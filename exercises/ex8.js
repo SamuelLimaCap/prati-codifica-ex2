@@ -58,4 +58,4 @@ function getSales() {
   ];
 }
 
-export { code as code, description as description };
+export default { code: code, description: description };

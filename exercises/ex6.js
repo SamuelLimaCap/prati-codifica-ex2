@@ -42,4 +42,4 @@ function memoize(fn) {
   };
 }
 
-export { description as description, code as code };
+export default { description: description, code: code };

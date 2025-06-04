@@ -31,11 +31,11 @@ function code() {
   }
 }
 
-function fatorial(num) {
+export function fatorial(num) {
   if (num < 0) throw Error("num-minor-than-0");
   if (isNaN(num)) throw Error("nan");
   if (num == 0 || num == 1) return 1;
   return num * fatorial(num - 1);
 }
 
-export { description as description, code as code, fatorial as fatorial };
+export default { description: description, code: code, fatorial: fatorial };

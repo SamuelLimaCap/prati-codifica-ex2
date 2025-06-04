@@ -1,5 +1,6 @@
 import promptSync from "prompt-sync";
 import { fatorial } from "./ex4.js";
+import utils from "./../utils.js";
 
 const prompt = promptSync();
 
@@ -27,6 +28,8 @@ function code() {
   setTimeout(() => {
     debounceFatorial(number + 2);
   }, 2100);
+
+  utils.msleep(4000);
 }
 
 function debounce(functionToDebounce, delayMs) {
@@ -53,4 +56,4 @@ function debounce(functionToDebounce, delayMs) {
   };
 }
 
-export { description as description, code as code };
+export default { description: description, code: code };
