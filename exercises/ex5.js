@@ -1,11 +1,10 @@
 import promptSync from "prompt-sync";
 import { fatorial } from "./ex4.js";
-import utils from "./../utils.js";
 
 const prompt = promptSync();
 
 function description() {
-  return "Debounce de função(fatorial)";
+  return "Debounce de função(fatorial) !! Esse exercicio encerarrá o menú após ser executado";
 }
 
 function code() {
@@ -29,7 +28,7 @@ function code() {
     debounceFatorial(number + 2);
   }, 2100);
 
-  utils.msleep(4000);
+  return true;
 }
 
 function debounce(functionToDebounce, delayMs) {
@@ -49,6 +48,7 @@ function debounce(functionToDebounce, delayMs) {
 
     timeoutId = setTimeout(() => {
       const result = functionToDebounce.apply(this, args);
+
       if (result != null && result != undefined) {
         console.log("Resultado do debounce:" + result);
       }

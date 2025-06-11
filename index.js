@@ -39,6 +39,8 @@ function runQuestions() {
   let exSelected = Number(prompt("Opção: "));
   consoleLogDivider();
 
+  let exitMenu = false;
+
   if (isNaN(exSelected) || !hasEx(exSelected)) {
     console.log(CColors["Reset"], "");
     console.log(CColors["FgRed"], "Não existe esse exercício");
@@ -50,14 +52,19 @@ function runQuestions() {
     );
 
     console.log;
-    playExercise(exSelected);
+    let shouldQuitMenu = playExercise(exSelected);
+    if (shouldQuitMenu) exitMenu = true;
+
     alreadyPlayedExercises[exSelected] = true;
     console.log("----------");
     console.log("");
   }
 
+  if (exitMenu) return false;
+
   displayWannaPlayAgain();
   let shouldRunAgain = prompt("Opção: ");
+
   if (shouldRunAgain == "s") {
     return true;
   }
@@ -65,7 +72,7 @@ function runQuestions() {
 }
 
 function playExercise(exNum) {
-  getEx(exNum).code();
+  return getEx(exNum).code();
 }
 
 function displayWannaPlayAgain() {

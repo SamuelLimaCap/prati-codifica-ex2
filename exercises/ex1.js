@@ -15,7 +15,7 @@ function code() {
 
   if (isDataValida) {
     console.log("A data que você digitou é uma data valida");
-    return true;
+    return;
   }
 
   console.log("Data invalida");
