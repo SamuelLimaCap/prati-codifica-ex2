@@ -4,7 +4,7 @@ import { fatorial } from "./ex4.js";
 const prompt = promptSync();
 
 function description() {
-  return "Debounce de função(fatorial) !! Esse exercicio encerarrá o menú após ser executado";
+  return "Debounce de função(fatorial) !! Esse exercicio encerarrá o menu após ser executado";
 }
 
 function code() {
